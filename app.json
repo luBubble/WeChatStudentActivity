@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"",
+        "text":"活动广场",
+      },
+      {
+        "pagePath": "",
+        "text": "活动管理",
+      },
+      {
+        "pagePath": "",
+        "text": "个人中心",
+      },
+    ]
+  }
+}
