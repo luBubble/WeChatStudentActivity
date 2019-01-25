@@ -1,7 +1,10 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/userCenter/userCenter",
+    "pages/activityManage/activityManage",
+    "pages/activityCenter/activityCenter"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -10,19 +13,32 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar":{
+    "color":"#666",
+    "selectedColor":"#E13B46",
+    "backgroundColor":"#fff",
     "list":[
       {
-        "pagePath":"",
+        "pagePath": "pages/index/index",
+        "text": "index"
+      },
+      {
+        "pagePath":"pages/activityCenter/activityCenter",
         "text":"活动广场",
+        "iconPath": "./images/index_gray.png",
+        "selectedIconPath":"./images/index_selected.png"
       },
       {
-        "pagePath": "",
+        "pagePath": "pages/activityManage/activityManage",
         "text": "活动管理",
+        "iconPath": "./images/manage_gray.png",
+        "selectedIconPath": "./images/manage_selected.png"
       },
       {
-        "pagePath": "",
+        "pagePath": "pages/activityCenter/activityCenter",
         "text": "个人中心",
-      },
+        "iconPath": "./images/mine_gray.png",
+        "selectedIconPath": "./images/mine_selected.png"
+      }
     ]
   }
 }

@@ -1,0 +1,4 @@
+<!-- activityManage.wxml-->
+<view class="container">
+ activity manage
+</view>

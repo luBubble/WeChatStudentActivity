@@ -1,0 +1,4 @@
+<!--userCenter.wxml-->
+<view class="container">
+ user center
+</view>
