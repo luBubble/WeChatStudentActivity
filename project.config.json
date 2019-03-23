@@ -28,13 +28,59 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "创建活动",
+					"pathName": "pages/addActivity/addActivity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动详情",
+					"pathName": "pages/activityDetail/activityDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "用户中心",
+					"pathName": "pages/userCenter/userCenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动管理",
+					"pathName": "pages/activityManage/activityManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学生认证",
+					"pathName": "pages/studentIdentify/studentIdentify",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动列表",
+					"pathName": "pages/activityList/activityList",
+					"scene": null
+				}
+			]
 		}
 	}
 }

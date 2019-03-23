@@ -5,7 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    options:[
+      {
+        text:"全部活动",
+        icon:"icon-all",
+        action:"gotoAllActivity"
+      },
+      {
+        text:"我的收藏",
+        icon:"icon-collection"
+      },
+      {
+        text:"浏览记录",
+        icon:"icon-history"
+      },
+      {
+        text:"我的报名",
+        icon:"icon-sign-up"
+      },
+      {
+        text:"我创建的活动",
+        icon:"icon-my-create"
+      },
+      {
+        text:"活动审核",
+        icon:"icon-check"
+      }
+    ]
   },
 
   /**
@@ -62,5 +88,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  gotoAllActivity:function() {
+    wx.showToast({
+      title: 'hhhh'
+    })
+  },
+
+//创建新活动
+  createActivity:function () {
+    // wx.showToast({
+    //   title:"请先进行活动组织者认证",
+    //   icon:"none"
+    // })
+  wx.navigateTo({
+    url: '../addActivity/addActivity'
+  })
   }
+
 })

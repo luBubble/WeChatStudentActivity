@@ -1,0 +1,81 @@
+<!--pages/addActivity/addActivity.wxml-->
+<view class='container'>
+  <view class='basic-msg'>
+    <view class='input-text'>活动名称（必填）</view>
+    <input class="input" type='text' placeholder='活动名称将展示在分享链接、首页活动卡片中'/>
+    <view class='input-text'>活动类型</view>
+    <input class="input" type='text'/>
+    
+    <view class='input-text'>活动地点</view>
+    <input class="input" type='text'/>
+    <view class='input-text'>活动主办方</view>
+    <input class="input" type='text'/>
+    <view class='input-text'>活动承办方</view>
+    <input class="input" type='text'/>
+    <view class='input-text'>活动起止</view>
+    <view class='time-began-end'>
+      <picker mode="date" start="2019-01-01" end="2019-12-31" value="{{beganDate}}" bindchange='bindBeganDateChange'>{{beganDate}}</picker>
+      <view class='time-to'>-</view>
+      <picker mode="date" start="2019-01-01" end="2019-12-31" value="{{endDate}}" bindchange='bindEndDateChange'>{{endDate}}</picker>
+    </view>
+    
+  </view>
+
+  <view class='detail-wrap'>
+    <view class='detail-head'>
+      <view class='input-text'>活动详情</view>
+      <radio-group bindchange="handleDetailType">
+        <radio color='#4BB7FF' checked='{{detailText}}' value='text'/>
+        <label>文本模块</label>
+        <radio color='#4BB7FF' checked='{{!detailText}}' value='pic'/>
+        <label>单张长图</label>
+      </radio-group>
+    </view>
+    
+    <view wx:if="{{detailText}}">
+      <view wx:for="{{detailTextDatas}}">
+        <input class='input' data-index="{{index}}" placeholder='请输入详情模块标题' value='{{item.title}}' bindinput='inputDetailTitle'/>
+        <textarea data-index="{{index}}" placeholder='请输入详情模块内容' value='{{item.content}}' bindinput='inputDetailContent'></textarea>
+        <view class='btn btn-blue' wx:if="{{index===detailTextDatas.length-1}}" bindtap='addDetailModule'>添加新详情模块</view>
+        <view class='delete-wrap'  wx:if="{{index!==detailTextDatas.length-1}}">
+          <view class='btn btn-red' data-index="{{index}}" bindtap='deleteDetailModule'>删除该详情模块</view>
+        </view>
+        
+      </view>
+      
+    </view>
+
+    <view class='upload-wrap' wx:if="{{!detailText}}">
+      <icon class='iconfont icon-add'></icon>
+    </view>
+  </view>
+  
+  <view class='time-line'>
+    <view class='input-text'>活动时间线</view>
+    <view class='time-line-group' wx:for="{{timeLineDatas}}" wx:key="{{index}}">
+      <picker class='' mode="date" start="2019-01-01" end="2019-12-31" value='{{item.date}}' data-index='{{index}}' bindchange='handleTimeLinePicker'>{{item.date}}</picker>
+      <input class="input time-line-input" type='text' value='{{item.content}}' data-index='{{index}}' bindinput='handleTimeLineInput'/>
+      <view class='{{index===timeLineDatas.length-1?"add-time-point":"reduce-time-point"}}' data-index='{{index}}' data-isAdd="{{index===timeLineDatas.length-1}}" bindtap='handleTimeLineAction'>
+        <icon class='iconfont {{index===timeLineDatas.length-1?"icon-add":"icon-reduce"}}'></icon>
+      </view>
+    </view>
+  </view>
+
+  <view class='slide-pic'>
+    <view class='input-text'>轮播图</view>
+    <view class='upload-wrap'>
+      <icon class='iconfont icon-add'></icon>
+    </view>
+  </view>
+
+  <view class='share-pic'>
+    <view class='input-text'>分享链接图片</view>
+    <view class='upload-wrap'>
+      <icon class='iconfont icon-add'></icon>
+    </view>
+  </view>
+
+  <view class='button-bottom'>创建活动</view>
+</view>
+
+

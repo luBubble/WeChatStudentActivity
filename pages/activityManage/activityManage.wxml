@@ -1,4 +1,15 @@
 <!-- activityManage.wxml-->
 <view class="container">
- activity manage
+  <view class='add-activity-wrap' bindtap='createActivity'>
+    <icon class='iconfont icon-add'></icon>
+    <text class='add-activity-text'>点击创建新活动</text>
+  </view>
+ <view class='types-container'>
+  <view class='type-wrap' wx:for="{{options}}" wx:key="{{index}}" bindtap='{{item.action}}'>
+    <view class='type-icon-bg {{item.icon}}-bg'>
+      <icon class='iconfont {{item.icon}}'></icon>
+    </view>
+    <text class='type-text'>{{item.text}}</text>
+  </view>
+ </view>
 </view>

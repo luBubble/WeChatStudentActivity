@@ -1,0 +1,50 @@
+<!--pages/activityDetail/activityDetail.wxml-->
+<view class='pic-wrap'>
+ <image class='bg-pic' src='../../images/slide1.jpg'/>
+</view>
+<view class='tab-wrap'>
+  <view class='tab-header' >
+    <view wx:for="{{tabItems}}" wx:key="{{index}}" data-tabindex='{{index}}' bindtap='handleTabClick' class="tab-item {{currentTab === index ? 'active' : '' }}">{{item}}</view> 
+  </view>
+  <view class='tab-body'>
+    <view hidden='{{currentTab !== 0}}'>
+      <view class='module-wrap'>
+          <view class='module-title'>活动简介</view>
+          <view class='module-content'>都可以随便的，你说的，我都愿意去，小火车，摆动的旋律，都可以是真的，你说的，我都会相信，因为我完全信任你。</view>
+      </view>
+      <view class='button-bottom'>报名</view>
+    </view>
+    
+    <view class='time-line-wrap' hidden='{{currentTab !== 1}}'>
+      <view class='time-item-wrap'>
+        <view class='item-point'></view>
+        <view class='item-date'>2019-03-20</view>
+        <view class='item-content'>总决赛</view>
+      </view>
+      <view class='time-item-wrap'>
+        <view class='item-point'></view>
+        <view class='item-date'>2019-03-20</view>
+        <view class='item-content'>总决赛</view>
+      </view>
+    </view>
+
+    <view hidden='{{currentTab !== 2}}'>
+      <view class='comment-item-wrap' wx:for='{{comments}}' wx:key="{{index}}">
+        <view class='user-img'></view>
+        <view class='comment-content'>
+          <view class='user-msg'>
+            <view class='user-name'>{{item.userName}}</view>
+            <view class='comment-time-text'>{{item.time}}</view>
+          </view>
+          <view class='content-text'>
+            <text hidden='{{item.anotherUser == ""}}'>回复<text class='another-user-name'>{{item.anotherUser}}</text>
+            </text>
+            <text class='comment-text'>{{item.text}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

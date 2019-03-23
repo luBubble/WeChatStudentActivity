@@ -1,13 +1,50 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<!--activityCenter.wxml-->
+  <swiper 
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+  >
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class='slide-image'/>
+      </swiper-item>
     </block>
+  </swiper>
+<view class='index-container'>
+ <view class='search-wrap'>
+  <input class="search-input" type='text' confirm-type="search" placeholder='输入关键词进行搜索'/>
+  <icon class="iconfont icon-search"/>
+ </view>
+
+ <view class='activity-container'>
+  <view class='activity-head'>
+    <view class='activity-type'>最新活动</view>
+    <view class='activity-more' bindtap='gotoMoreActivity'>更多</view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='activity-list'>
+    <view class="activity-wrap activity-box" wx:for="{{newActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail'>
+      <image class='activity-pic' src='{{item.img}}' />
+      <view class='title'>{{item.title}}</view>
+      <view class='belong'>{{item.orgnization}}</view>
+    </view>
   </view>
-</view>
+
+<view class='activity-head'>
+    <view class='activity-type'>热门活动</view>
+    <view class='activity-more' bindtap='gotoMoreActivity'>更多</view>
+  </view>
+    <view class='top-container'>
+      <view class='top-wrap activity-box' wx:for="{{hotActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail'>
+        <view class='top-num'>{{index+1}}</view>
+        <image class='top-pic' src='{{item.img}}'/>
+        <view class='top-content-wrap'>
+          <view class='title'>{{item.title}}</view>
+          <view class='belong'>{{item.orgnization}}</view>
+          <view class='see-num'>浏览量{{item.viewNum}}人次</view>
+        </view>
+      </view>
+    </view>
+ </view>
+
+ </view>
+ 

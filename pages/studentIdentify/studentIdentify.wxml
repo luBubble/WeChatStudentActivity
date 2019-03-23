@@ -1,0 +1,21 @@
+<!--pages/studentIdentify/studentIdentify.wxml-->
+<view class='container'>
+  <view class='identify-wrap'>
+    <view class='input-text'>姓名（必填）</view>
+    <input class="input" type='text' placeholder='请输入真实姓名'/>
+    <view class='input-text'>院系（必填）</view>
+    <input class="input" type='text' placeholder='请输入院系'/>
+    <view class='input-text'>班级（必填）</view>
+    <input class="input" type='text' placeholder='请输入班级'/>
+    <view class='input-text'>学号（必填）</view>
+    <input class="input" type='text' placeholder='请输入学号'/>
+  </view>
+  <view class='identify-wrap'>
+    <view class='input-text'>学生证照片上传（必传）</view>
+    <view class='upload-wrap'>
+      <icon class='iconfont icon-add'></icon>
+    </view>
+  </view>
+  <view class='button-bottom'>提交审核</view>
+</view>
+

@@ -1,1 +1,82 @@
 /* pages/activityManage/activityManage.wxss */
+.container{
+  background-color: #fff;
+}
+.add-activity-wrap{
+  text-align:center;
+  margin:80rpx auto;
+  width:45%;
+  border:16rpx solid rgba(225, 59, 70, 0.7);
+  padding:40rpx;
+  background:rgba(225,59,70,0.03);
+  border-radius:12rpx;
+  box-shadow:2rpx 3rpx 10rpx #ddd;
+}
+.add-activity-wrap icon{
+  font-size: 360%;
+  color: rgba(225, 59, 70, 0.7);
+}
+.add-activity-text{
+  display: block;
+  font-weight: 600;
+  color: rgba(225, 59, 70, 0.7);
+}
+.types-container{
+  box-sizing:border-box;
+  width: 100%;
+  padding:0 60rpx;
+  display: flex;
+  justify-content:space-around; 
+  flex-wrap: wrap;  
+}
+.type-wrap{
+ padding: 0 0 40rpx 0;
+ position: relative;
+ margin-top: 16rpx;
+ width: 200rpx;
+}
+.type-wrap icon{
+  display:block;
+  width: 32px;
+  margin: 0 auto;
+  text-align: center; 
+}
+.type-text{
+  width: 100%;
+  text-align: center;
+  font-size: 70%;
+  color: #888;
+  margin-top:22rpx;
+  display:inline-block;
+}
+.type-icon-bg{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  box-shadow: 2rpx 4rpx 10rpx #eee;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.icon-all,.icon-my-create{
+  font-size: 160%;
+  color:#FF9900;
+}
+.icon-all-bg,.icon-my-create-bg{
+  background-color: rgba(255, 255, 0, 0.15);
+}
+.icon-collection,.icon-check{
+  font-size: 160%;
+  color:#E66039;
+}
+.icon-collection-bg,.icon-check-bg{
+  background-color: rgba(230,96,57, 0.1);
+}
+.icon-history,.icon-sign-up{
+  font-size: 160%;
+  color:#22A7FF;
+}
+.icon-history-bg ,.icon-sign-up-bg{
+  background-color: rgba(34, 211, 255, 0.08);
+}

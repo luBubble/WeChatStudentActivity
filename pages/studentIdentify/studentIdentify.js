@@ -1,4 +1,4 @@
-// pages/activityCenter/activityCenter.js
+// pages/studentIdentify/studentIdentify.js
 Page({
 
   /**

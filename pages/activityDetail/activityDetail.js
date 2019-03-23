@@ -1,32 +1,28 @@
-// pages/userCenter/userCenter.js
+// pages/activityDetail/activityDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    myItems:[
+    tabItems:[
+      '详情', 
+      '时间线', 
+      '评论' 
+    ],
+    currentTab:0,
+    comments:[
       {
-        icon: "icon-student",
-        text: "学生认证",
-        action:"gotoStudentIdentify"
-      }, 
-      {
-        icon: "icon-student-work",
-        text: "活动组织者认证",
-        action:"gotoOrganizerIdentify"
+        userName:"噜噜噜",
+        time:"03-16 19:00",
+        anotherUser:"海洋",
+        text:"哈哈哈哈哈"
       },
       {
-        icon:"icon-manager",
-        text:"管理员认证"
-      },
-      {
-        icon: "icon-msg",
-        text: "我的消息"
-      },
-      {
-        icon: "icon-service",
-        text: "联系我们"
+        userName: "来吃葱",
+        time: "03-16 19:00",
+        anotherUser: "",
+        text: "哈哈哈哈哈"
       }
     ]
   },
@@ -86,10 +82,11 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //页面跳转
-  gotoStudentIdentify(e){
-    wx.navigateTo({
-      url: '../studentIdentify/studentIdentify'
+
+  handleTabClick: function (e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.tabindex
     })
   }
+
 })

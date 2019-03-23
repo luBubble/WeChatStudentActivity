@@ -1,1 +1,55 @@
 /* pages/userCenter/userCenter.wxss */
+.continer{
+  background-color:#FCFCFC;
+  min-height: 100vh;
+}
+.user-msg-wrap,.user-item-wrap{
+  display: flex;
+  align-items: center;
+  height: 128rpx;
+  padding: 0 40rpx;
+  background-color: #fff; 
+}
+.user-msg-wrap{
+  margin-bottom: 40rpx;
+  box-shadow: 4rpx 4rpx 20rpx #ddd;
+}
+.user-item-wrap{
+  border-bottom: 1rpx solid #ddd;
+}
+.user-msg{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.user-pic{
+  margin-right: 40rpx;
+}
+.identify-btn{
+  background-color: #E66039;
+  color: #fff;
+  font-size: 80%;
+}
+.user-pic{
+  width: 98rpx;
+  height: 98rpx;
+  background-color: #E66039;
+  border-radius: 50%; 
+}
+.user-item-wrap{
+  justify-content: space-between;
+}
+.user-item-text{
+  display: flex;
+  align-items:center; 
+}
+.item-icon{
+  font-size: 150%;
+  color: #E66039;
+  margin-right: 12rpx;
+}
+.icon-arrow{
+  color: #ddd;
+  line-height:32px;
+}

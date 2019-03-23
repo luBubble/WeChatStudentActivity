@@ -1,0 +1,93 @@
+/* pages/addActivity/addActivity.wxss */
+.container{
+  padding-bottom: 120rpx;
+  background-color: #f2f2f2;
+}
+.basic-msg,.time-line,.slide-pic,.share-pic,.detail-wrap{
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  font-size: 80%;
+  padding: 2rpx 40rpx;
+  text-align: left;
+  box-shadow:4rpx 4rpx 10rpx #eee;
+}
+.share-pic,.slide-pic,.detail-wrap{
+  padding:40rpx;
+}
+.time-line,.slide-pic,.share-pic,.detail-wrap{
+  margin-top: 40rpx;
+  padding-top:40rpx; 
+}
+.detail-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.detail-head .input-text{
+  width:160rpx;
+  margin: 0;
+}
+.detail-head radio-group{
+  display:flex;
+  align-items:center;
+}
+.detail-head radio{
+  transform:scale(0.8);
+  margin-left:20rpx; 
+}
+.input-text{
+  font-size: 120%;
+  font-weight: 600;
+  margin-bottom:20rpx; 
+}
+.input{
+   width: 100%;
+   padding: 0 18rpx;
+}
+
+.time-began-end{
+  display: flex;
+  width: 100%;
+  justify-content:flex-start;
+}
+picker{
+  width: 220rpx;
+}
+.time-to{
+  height: 72rpx;
+  line-height: 72rpx;
+  width: 72rpx;
+  text-align: center;
+}
+.time-line-group{
+  display: flex;
+  justify-content: space-between
+}
+.time-line-input{
+ flex: 1;
+ margin: 0 20rpx;
+}
+.add-time-point,.reduce-time-point{
+  width: 68rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2rpx 3rpx 10rpx #ddd;
+}
+.add-time-point{
+  /* border: 1rpx solid rgb(75,183,255); */
+  background-color:  rgb(75,183,255);
+}
+.add-time-point .icon-add,.reduce-time-point .icon-reduce{
+  color:#fff;
+  margin-top:-4rpx;
+}
+.reduce-time-point{
+  background-color:  #FF4B57;
+}
+.delete-wrap{
+  padding-bottom:80rpx;
+}

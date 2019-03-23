@@ -1,41 +1,21 @@
-// pages/userCenter/userCenter.js
+// pages/activityList/activityList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    myItems:[
-      {
-        icon: "icon-student",
-        text: "学生认证",
-        action:"gotoStudentIdentify"
-      }, 
-      {
-        icon: "icon-student-work",
-        text: "活动组织者认证",
-        action:"gotoOrganizerIdentify"
-      },
-      {
-        icon:"icon-manager",
-        text:"管理员认证"
-      },
-      {
-        icon: "icon-msg",
-        text: "我的消息"
-      },
-      {
-        icon: "icon-service",
-        text: "联系我们"
-      }
-    ]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let navigationBartitle="全部活动";
+    wx.setNavigationBarTitle({
+      title: navigationBartitle
+    })
   },
 
   /**
@@ -85,11 +65,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  //页面跳转
-  gotoStudentIdentify(e){
-    wx.navigateTo({
-      url: '../studentIdentify/studentIdentify'
-    })
   }
 })

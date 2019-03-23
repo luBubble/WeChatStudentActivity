@@ -1,0 +1,13 @@
+<!--pages/activityList/activityList.wxml-->
+<view class='container'>
+  <view class='list-wrap'>
+    <view class='activity-box'>
+        <image class='pic' src='../../images/slide1.jpg'/>
+        <view class='content-wrap'>
+          <view class='title'>超级受欢迎的活动</view>
+          <view class='belong'>信息与安全工程学院学生会</view>
+          <view class='see-num'>浏览量2333人次</view>
+        </view>
+      </view>
+  </view>
+</view>

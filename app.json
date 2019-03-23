@@ -1,31 +1,30 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/userCenter/userCenter",
     "pages/activityManage/activityManage",
-    "pages/activityCenter/activityCenter"
+    "pages/addActivity/addActivity",
+    "pages/activityDetail/activityDetail",
+    "pages/studentIdentify/studentIdentify",
+    "pages/activityList/activityList"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-  "tabBar":{
-    "color":"#666",
-    "selectedColor":"#E13B46",
-    "backgroundColor":"#fff",
-    "list":[
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#E13B46",
+    "backgroundColor": "#fff",
+    "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "index"
-      },
-      {
-        "pagePath":"pages/activityCenter/activityCenter",
-        "text":"活动广场",
+        "text": "活动广场",
         "iconPath": "./images/index_gray.png",
-        "selectedIconPath":"./images/index_selected.png"
+        "selectedIconPath": "./images/index_selected.png"
       },
       {
         "pagePath": "pages/activityManage/activityManage",
@@ -34,7 +33,7 @@
         "selectedIconPath": "./images/manage_selected.png"
       },
       {
-        "pagePath": "pages/activityCenter/activityCenter",
+        "pagePath": "pages/userCenter/userCenter",
         "text": "个人中心",
         "iconPath": "./images/mine_gray.png",
         "selectedIconPath": "./images/mine_selected.png"

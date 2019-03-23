@@ -1,0 +1,39 @@
+/* pages/activityList/activityList.wxss */
+.list-title{
+  text-align: center;
+  font-size: 80%;
+  color: #E66039;
+}
+.list-wrap{
+  padding: 40rpx;
+}
+.activity-box{
+  box-sizing: border-box;
+  height:160rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40rpx;
+  border-radius: 16rpx;
+  box-shadow: 2rpx 3rpx 10rpx #ddd;
+  background-color: #fff;
+}
+.activity-box .pic{
+  height: 120rpx ;
+  width: 160rpx ;
+}
+.activity-box .content-wrap{
+  margin-left:20rpx; 
+}
+.title{
+  font-size: 80%;
+  font-weight:600;
+}
+.belong{
+  margin: 12rpx 0 ;
+}
+.see-num,.belong{
+  font-size: 60%;
+  color: #888;
+}

@@ -1,21 +1,118 @@
-/**index.wxss**/
-.userinfo {
+/* pages/activityCenter/activityCenter.wxss */
+page{
+  background-color: #FDFDFD;
+}
+.slide-image{
+  width: 100%;
+}
+.search-wrap{
+  box-sizing: border-box;
+  padding:0 42rpx;
+  width: 80%;
+  box-shadow: 4rpx 4rpx 10rpx #ddd;
+  margin:40rpx auto;
+  border-radius:50rpx;
+  display:flex;
+  align-items:center;
+  background-color: #fff;
+}
+.search-input{
+  box-sizing: border-box;
+  display:inline-block;
+  vertical-align: middle;
+  height: 72rpx;
+  padding: 12rpx 0;
+  width: calc(100% - 24px);
+  font-size:80%;
+}
+.icon-search{
+ font-size:160%;
+ padding-bottom:6rpx;
+ color:rgba(230,96,57, 0.8);
+}
+
+.activity-container{
+  width: 100%;
+}
+.activity-type{
+  margin-left:40rpx;
+  border-left:16rpx solid #FFD39B;
+  padding-left:12rpx; 
+  line-height:48rpx;
+  font-weight: 600;
+}
+.activity-list{
+  padding: 40rpx 60rpx;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.activity-wrap{
+  padding: 20rpx 26rpx;
+}
+.top-container{
+   padding: 40rpx 60rpx;
+}
+
+.activity-box{
+  margin-bottom: 40rpx;
+  border-radius: 16rpx;
+  box-shadow: 2rpx 3rpx 10rpx #ddd;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.activity-pic{
+   height: 165rpx ;
+   width: 220rpx ;
+}
+.top-wrap{
+  box-sizing: border-box;
+  height:160rpx;
+  padding: 20rpx;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
+.top-num{
+  height: 136rpx;
+  width: 76rpx;
+  text-align: center;
+  line-height: 136rpx;
+  margin-right: 20rpx;
+  font-size:130%;
+  font-weight:800;
+  color:rgba(230,96,57, 0.8);
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+}
+.top-pic{
+  height: 120rpx ;
+  width: 160rpx ;
+}
+.top-content-wrap{
+  margin-left:20rpx; 
+}
+.top-content-wrap .title,.activity-wrap .title{
+  font-size: 80%;
+  font-weight:600;
+}
+.top-content-wrap .belong{
+  margin: 12rpx 0 ;
+}
+.top-content-wrap .see-num,.activity-wrap .belong,.top-content-wrap .belong{
+  font-size: 60%;
+  color: #888;
+}
+.activity-wrap .belong{
+  margin-top: 12rpx;
+}
+.activity-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activity-more{
+  color: rgba(230,96,57, 0.8);
+  font-size: 80%;
+  margin-right: 80rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}

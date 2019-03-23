@@ -1,10 +1,167 @@
 /**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+.container{
+  color: #555;
+  margin: 0 ;
+  padding: 0 ;
+  min-height: 100vh;
+  background-color: #FCFCFC;
+}
+.input,picker,textarea{
   box-sizing: border-box;
-} 
+  margin-bottom:40rpx;
+  height:72rpx;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid rgba(225,59,70,0.5);
+  background-color: rgba(225,59,70,0.03);
+}
+picker{
+  text-align: center;
+}
+textarea{
+  box-sizing: border-box;
+  height: 160rpx;
+  width:auto;
+  line-height: 42rpx;
+  padding: 20rpx;
+}
+picker{
+  padding: 0 18rpx;
+  line-height: 72rpx;
+}
+.button-bottom{
+  width: 100%;
+  background:linear-gradient(#E66039, #E13B46);
+  text-align: center;
+  position: fixed;
+  bottom: 0rpx;
+  left:0rpx;
+  color: #fff;
+  padding: 20rpx 0;
+}
+.upload-wrap{
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid rgba(225,59,70,0.5);
+  background-color: rgba(225,59,70,0.03);
+  text-align: center;
+  margin: 0 auto;
+}
+.upload-wrap .icon-add{
+  color: rgba(225,59,70,0.5);
+}
+
+.box-shadow{
+  box-shadow: 4rpx 4rpx 20rpx #ddd;
+}
+.btn{
+  padding: 20rpx 40rpx;
+  border-radius: 80rpx;
+  box-shadow: 2rpx 3rpx 10rpx #ddd;
+  text-align: center;
+}
+
+.btn-blue{
+  background-color: #4BB7FF;
+  color: #fff;
+}
+.btn-red{
+   background-color: #FF4B57;
+   color: #fff;
+}
+
+/*图标*/
+@font-face {
+  font-family: 'iconfont';  /* project id 1083985 */
+  src: url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.eot');
+  src: url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-msg:before {
+  content: "\e66e";
+}
+
+.icon-comment:before {
+  content: "\e66f";
+}
+
+.icon-search:before {
+  content: "\e671";
+}
+
+.icon-sign-up:before {
+  content: "\e672";
+}
+
+.icon-service:before {
+  content: "\e673";
+}
+
+.icon-arrow:before {
+  content: "\e62d";
+}
+
+.icon-all:before {
+  content: "\e675";
+}
+
+.icon-linedesign-02:before {
+  content: "\e674";
+}
+
+.icon-collection:before {
+  content: "\e676";
+}
+
+.icon-history:before {
+  content: "\e670";
+}
+
+.icon-add:before{
+  content: "\e633";
+}
+
+.icon-reduce::before{
+  content:"\e644";
+}
+
+.icon-my-create::before{
+  content: "\e604";
+}
+
+.icon-check::before{
+  content: "\e600";
+}
+
+.icon-student::before{
+  content: "\e7c0";
+}
+
+.icon-student-work::before{
+  content: "\e65e";
+}
+
+.icon-manager::before{
+  content: "\e65f";
+}
+
+icon-identify::before{
+  content: "\e635";
+}
+
+
+

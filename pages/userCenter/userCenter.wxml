@@ -1,4 +1,19 @@
 <!--userCenter.wxml-->
-<view class="container">
- user center
+<view class='continer'>
+<view class="user-msg-wrap">
+ <view class='user-msg'>
+  <view class='user-pic'></view>
+  <view class='user-name'>boom</view>
+ </view>
+ <view class='user-type'>未认证</view>
+</view>
+
+<view class='user-item-wrap' wx:for="{{myItems}}" wx:key="{{index}}" bindtap='{{item.action}}'>
+  <view class='user-item-text'>
+    <icon class="item-icon iconfont {{item.icon}}" ></icon>
+    <text>{{item.text}}</text>
+  </view>
+  <icon class="iconfont icon-arrow" ></icon>
+</view>
+
 </view>
