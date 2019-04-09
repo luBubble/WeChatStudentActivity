@@ -7,7 +7,7 @@ Page({
   data: {
     options:[
       {
-        text:"全部活动",
+        text:"我的评论",
         icon:"icon-all",
         action:"gotoAllActivity"
       },
@@ -16,20 +16,32 @@ Page({
         icon:"icon-collection"
       },
       {
-        text:"浏览记录",
-        icon:"icon-history"
-      },
-      {
         text:"我的报名",
         icon:"icon-sign-up"
       },
       {
-        text:"我创建的活动",
+        text: "已点赞活动",
+        icon: "icon-zan"
+      },
+      {
+        text: "已分享活动",
+        icon: "icon-share"
+      },
+      {
+        text: "浏览记录",
+        icon: "icon-history"
+      },
+      {
+        text:"已发布活动",
         icon:"icon-my-create"
       },
       {
-        text:"活动审核",
-        icon:"icon-check"
+        text: "活动草稿",
+        icon: "icon-draft"
+      },
+      {
+        text: "待审核活动",
+        icon: "icon-check"
       }
     ]
   },

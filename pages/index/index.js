@@ -1,52 +1,53 @@
 // pages/activityCenter/activityCenter.js
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
     imgUrls:[
-      '../../images/slide1.jpg',
-      '../../images/slide2.jpg',
-      '../../images/slide3.jpeg'
+      'ac1.jpg',
+      'ac2.jpg',
+      'ac3.jpg'
     ],
     autoplay: true,
+    circular:true,
     interval: 3000,
     duration: 1000,
     newActivities:[
       {
-        img:"../../images/slide2.jpg",
-        title:"送毕业生晚会",
+        img:"ac4.jpg",
+        title:"工程之星颁奖晚会",
         organization:"信息与安全工程学院"
       },
       {
-        img: "../../images/slide1.jpg",
-        title: "影像中南",
-        organization: "新闻与传播学院"
+        img: "ac6.jpg",
+        title: "春季运动会",
+        organization: "中南财经政法大学校团委"
       }
     ],
     hotActivities:[
       {
-        img: "../../images/slide1.jpg",
+        img: "ac1.jpg",
         title: "影像中南",
         organization: "新闻与传播学院",
         viewNum:2333
       },
       {
-        img: "../../images/slide2.jpg",
+        img: "slide2.jpg",
         title: "影像中南",
         organization: "新闻与传播学院",
         viewNum: 666
       },
       {
-        img: "../../images/slide3.jpeg",
+        img: "slide3.jpeg",
         title: "影像中南",
         organization: "新闻与传播学院",
         viewNum: 11
       }
     ]
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */

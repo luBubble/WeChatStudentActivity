@@ -2,10 +2,15 @@
 <view class='continer'>
 <view class="user-msg-wrap">
  <view class='user-msg'>
-  <view class='user-pic'></view>
+  <view class='user-pic-wrap'>
+    <image class='user-pic' src='../../images/user1.jpg'></image>
+  </view>
   <view class='user-name'>boom</view>
  </view>
- <view class='user-type'>未认证</view>
+ <view class='user-type'>
+  <icon class='iconfont icon-identify-mark'></icon>
+  <text class='identify-text'>未认证</text>
+ </view>
 </view>
 
 <view class='user-item-wrap' wx:for="{{myItems}}" wx:key="{{index}}" bindtap='{{item.action}}'>

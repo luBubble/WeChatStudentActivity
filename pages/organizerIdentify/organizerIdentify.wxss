@@ -1,0 +1,26 @@
+/* pages/organizerIdentify/organizerIdentify.wxss */
+/* pages/studentIdentify/studentIdentify.wxss */
+.container{
+  padding-bottom: 120rpx;
+}
+.identify-wrap{
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  font-size: 80%;
+  padding: 40rpx;
+  box-shadow:4rpx 4rpx 10rpx #eee;
+  margin-bottom: 40rpx;
+}
+.identify-wrap:first-child{
+  padding: 2rpx 40rpx;
+}
+.input-text{
+  width: 100%;
+  font-weight: 600;
+  margin-bottom:20rpx; 
+}
+.input{
+   width: 100%;
+   padding: 0 18rpx;
+}

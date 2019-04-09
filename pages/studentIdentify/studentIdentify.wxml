@@ -15,6 +15,7 @@
     <view class='upload-wrap'>
       <icon class='iconfont icon-add'></icon>
     </view>
+    <view class='remark-text'>请上传学生证、校园卡等证明材料</view>
   </view>
   <view class='button-bottom'>提交审核</view>
 </view>

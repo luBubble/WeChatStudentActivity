@@ -32,11 +32,17 @@
   font-size: 80%;
 }
 .user-pic{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%; 
+  box-shadow:2rpx 2rpx 16rpx #ddd
+}
+.user-pic{
   width: 98rpx;
   height: 98rpx;
-  background-color: #E66039;
   border-radius: 50%; 
 }
+
 .user-item-wrap{
   justify-content: space-between;
 }
@@ -52,4 +58,13 @@
 .icon-arrow{
   color: #ddd;
   line-height:32px;
+}
+.icon-identify-mark{
+  margin-right: 12rpx;
+  color: #bbb;
+}
+.identify-text{
+  color: #bbb;
+  font-size: 80%;
+  font-weight: 600;
 }

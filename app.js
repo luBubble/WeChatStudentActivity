@@ -1,6 +1,12 @@
 //app.js
+require('./utils/v-request.js');
 App({
   onLaunch: function () {
+    // if (!wx.cloud) {
+    //   console.error("请使用2.2.3或以上版本");
+    // } else {
+    //   wx.cloud.init();
+    // }
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -10,6 +16,31 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.code) {
+          wx.request({
+            url: this.globalData.serverAddress+'/login',
+            data: {
+              code: res.code
+            },
+            method: "GET",
+            success: function (res) {
+              console.log("======",res)
+              var session_data = res.data.session_data;
+              var session_id = session_data.session_id;
+              var expires = session_data.expires;
+              var data = session_data.data;
+              var openid = res.data.openid;
+              //将session_id保存到本地数据库
+              wx.setStorageSync('session_id', session_id)
+              wx.setStorageSync('openid', openid)
+            }
+          })
+        } else {
+          console.log("获取用户登录状态失败" + res.errMsg);
+        }
+      },
+      complete: function (e) {
+        console.log("获取用户登录成功" + e.toString());
       }
     })
     // 获取用户信息
@@ -34,6 +65,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    serverAddress:"http://localhost:3000",
   }
 })

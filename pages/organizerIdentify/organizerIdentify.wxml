@@ -1,0 +1,19 @@
+<!--pages/organizerIdentify/organizerIdentify.wxml-->
+<view class='container'>
+   <view class='identify-wrap'>
+    <view class='input-text'>学生组织名称（必填）</view>
+    <input class="input" type='text' placeholder='请输入真实姓名'/>
+    <view class='input-text'>职位（必填）</view>
+    <input class="input" type='text' placeholder='请输入院系'/>
+    <view class='input-text'>界别（必填）</view>
+    <input class="input" type='text' placeholder='请输入班级'/>
+  </view>
+  <view class='identify-wrap'>
+    <view class='input-text'>学生组织者证明上传（必传）</view>
+    <view class='upload-wrap'>
+      <icon class='iconfont icon-add'></icon>
+    </view>
+    <view class='remark-text'>请上传学生组织工作证等证明材料</view>
+  </view>
+  <view class='button-bottom'>提交审核</view>
+</view>

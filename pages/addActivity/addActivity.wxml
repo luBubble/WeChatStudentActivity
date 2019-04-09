@@ -5,7 +5,6 @@
     <input class="input" type='text' placeholder='活动名称将展示在分享链接、首页活动卡片中'/>
     <view class='input-text'>活动类型</view>
     <input class="input" type='text'/>
-    
     <view class='input-text'>活动地点</view>
     <input class="input" type='text'/>
     <view class='input-text'>活动主办方</view>
@@ -33,7 +32,7 @@
     </view>
     
     <view wx:if="{{detailText}}">
-      <view wx:for="{{detailTextDatas}}">
+      <view wx:for="{{detailTextDatas}}" wx:key="{{index}}">
         <input class='input' data-index="{{index}}" placeholder='请输入详情模块标题' value='{{item.title}}' bindinput='inputDetailTitle'/>
         <textarea data-index="{{index}}" placeholder='请输入详情模块内容' value='{{item.content}}' bindinput='inputDetailContent'></textarea>
         <view class='btn btn-blue' wx:if="{{index===detailTextDatas.length-1}}" bindtap='addDetailModule'>添加新详情模块</view>
@@ -66,6 +65,7 @@
     <view class='upload-wrap'>
       <icon class='iconfont icon-add'></icon>
     </view>
+    <view class='remark-text'>建议上传1030*535像素的图片，5.0M以内，支持jpg、jpeg、png格式，且最多上传3张。</view>
   </view>
 
   <view class='share-pic'>
@@ -73,9 +73,13 @@
     <view class='upload-wrap'>
       <icon class='iconfont icon-add'></icon>
     </view>
+    <view class='remark-text'>建议上传500*400像素的图片，5.0M以内，支持jpg、jpeg、png格式。</view>
   </view>
 
-  <view class='button-bottom'>创建活动</view>
+  <view class='button-two-bottom'>
+    <view class='btb-item-white'>存为草稿</view>
+    <view class='btb-item'>发布活动</view>
+  </view>
 </view>
 
 

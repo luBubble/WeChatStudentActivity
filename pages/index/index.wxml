@@ -3,10 +3,11 @@
     autoplay="{{autoplay}}"
     interval="{{interval}}"
     duration="{{duration}}"
+    circular="{{circular}}"
   >
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" class='slide-image'/>
+        <image src="../../images/{{item}}" class='slide-image'/>
       </swiper-item>
     </block>
   </swiper>
@@ -23,9 +24,9 @@
   </view>
   <view class='activity-list'>
     <view class="activity-wrap activity-box" wx:for="{{newActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail'>
-      <image class='activity-pic' src='{{item.img}}' />
+      <image class='activity-pic' src='../../images/{{item.img}}' />
       <view class='title'>{{item.title}}</view>
-      <view class='belong'>{{item.orgnization}}</view>
+      <view class='belong'>{{item.organization}}</view>
     </view>
   </view>
 
@@ -36,10 +37,10 @@
     <view class='top-container'>
       <view class='top-wrap activity-box' wx:for="{{hotActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail'>
         <view class='top-num'>{{index+1}}</view>
-        <image class='top-pic' src='{{item.img}}'/>
+        <image class='top-pic' src='../../images/{{item.img}}'/>
         <view class='top-content-wrap'>
           <view class='title'>{{item.title}}</view>
-          <view class='belong'>{{item.orgnization}}</view>
+          <view class='belong'>{{item.organization}}</view>
           <view class='see-num'>浏览量{{item.viewNum}}人次</view>
         </view>
       </view>

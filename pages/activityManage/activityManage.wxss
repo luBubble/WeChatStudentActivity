@@ -4,7 +4,7 @@
 }
 .add-activity-wrap{
   text-align:center;
-  margin:80rpx auto;
+  margin:40rpx auto;
   width:45%;
   border:16rpx solid rgba(225, 59, 70, 0.7);
   padding:40rpx;
@@ -59,24 +59,24 @@
   text-align: center;
   align-items: center;
 }
-.icon-all,.icon-my-create{
+.icon-all,.icon-share,.icon-check{
   font-size: 160%;
   color:#FF9900;
 }
-.icon-all-bg,.icon-my-create-bg{
+.icon-all-bg,.icon-share-bg,.icon-check-bg{
   background-color: rgba(255, 255, 0, 0.15);
 }
-.icon-collection,.icon-check{
+.icon-my-create,.icon-history,.icon-collection{
   font-size: 160%;
   color:#E66039;
 }
-.icon-collection-bg,.icon-check-bg{
+.icon-my-create-bg,.icon-history-bg,.icon-collection-bg{
   background-color: rgba(230,96,57, 0.1);
 }
-.icon-history,.icon-sign-up{
+.icon-sign-up,.icon-zan,.icon-draft{
   font-size: 160%;
   color:#22A7FF;
 }
-.icon-history-bg ,.icon-sign-up-bg{
+.icon-sign-up-bg,.icon-zan-bg,.icon-draft-bg{
   background-color: rgba(34, 211, 255, 0.08);
 }

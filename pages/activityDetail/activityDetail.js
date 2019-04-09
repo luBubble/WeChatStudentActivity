@@ -10,7 +10,7 @@ Page({
       '时间线', 
       '评论' 
     ],
-    currentTab:0,
+    currentTab:2,
     comments:[
       {
         userName:"噜噜噜",
@@ -23,7 +23,63 @@ Page({
         time: "03-16 19:00",
         anotherUser: "",
         text: "哈哈哈哈哈"
+      },
+      {
+        userName:"噜噜噜",
+        time:"03-16 19:00",
+        anotherUser:"海洋",
+        text:"哈哈哈哈哈"
+      },
+      {
+        userName: "来吃葱",
+        time: "03-16 19:00",
+        anotherUser: "",
+        text: "哈哈哈哈哈"
+      },
+      {
+        userName:"噜噜噜",
+        time:"03-16 19:00",
+        anotherUser:"海洋",
+        text:"哈哈哈哈哈"
+      },
+      {
+        userName: "来吃葱",
+        time: "03-16 19:00",
+        anotherUser: "",
+        text: "哈哈哈哈哈"
+      },
+      {
+        userName: "噜噜噜",
+        time: "03-16 19:00",
+        anotherUser: "海洋",
+        text: "哈哈哈哈哈"
+      },
+      {
+        userName: "来吃葱",
+        time: "03-16 19:00",
+        anotherUser: "",
+        text: "哈哈哈哈哈"
       }
+    ],
+    timeLines:[
+      {
+        date:"2019-03-20",
+        content:"海选阶段"
+      },
+      {
+        date: "2019-03-21",
+        content: "初赛"
+      }
+    ],
+    activityDetails:[
+    {
+      title:"活动简介",
+      content:"都可以随便的，你说的，我都愿意去，小火车，摆动的旋律，都可以是真的，你说的，我都会相信，因为我完全信任你。"
+    },
+    {
+      title: "活动流程",
+      content: "都可以随便的，你说的，我都愿意去，小火车，摆动的旋律，都可以是真的，你说的，我都会相信，因为我完全信任你。"
+    }
     ]
   },
 

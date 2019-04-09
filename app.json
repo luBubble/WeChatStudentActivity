@@ -7,7 +7,8 @@
     "pages/addActivity/addActivity",
     "pages/activityDetail/activityDetail",
     "pages/studentIdentify/studentIdentify",
-    "pages/activityList/activityList"
+    "pages/activityList/activityList",
+    "pages/organizerIdentify/organizerIdentify"
   ],
   "window": {
     "backgroundTextStyle": "light",

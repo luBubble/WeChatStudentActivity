@@ -13,7 +13,7 @@ Page({
       }, 
       {
         icon: "icon-student-work",
-        text: "活动组织者认证",
+        text: "学生组织者认证",
         action:"gotoOrganizerIdentify"
       },
       {
@@ -90,6 +90,11 @@ Page({
   gotoStudentIdentify(e){
     wx.navigateTo({
       url: '../studentIdentify/studentIdentify'
+    })
+  },
+  gotoOrganizerIdentify(e){
+    wx.navigateTo({
+      url: '../organizerIdentify/organizerIdentify'
     })
   }
 })

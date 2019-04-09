@@ -39,6 +39,29 @@ picker{
   color: #fff;
   padding: 20rpx 0;
 }
+.button-two-bottom{
+  width: 100%;
+  position: fixed;
+  bottom: 40rpx;
+  left:0rpx;
+  display: flex;
+  justify-content: center;
+}
+.btb-item{
+  background:linear-gradient(#E66039, #E13B46);
+  color: #fff;
+  padding: 20rpx 60rpx;
+  margin: 0 20rpx;
+  border-radius: 120rpx;
+}
+.btb-item-white{
+  background-color:#fff;
+  color: #E13B46;
+  border: 1rpx solid #E66039;
+  padding: 20rpx 60rpx;
+  margin: 0 20rpx;
+  border-radius: 120rpx;
+}
 .upload-wrap{
   width: 120rpx;
   height: 120rpx;
@@ -47,12 +70,15 @@ picker{
   border: 1rpx solid rgba(225,59,70,0.5);
   background-color: rgba(225,59,70,0.03);
   text-align: center;
-  margin: 0 auto;
 }
 .upload-wrap .icon-add{
   color: rgba(225,59,70,0.5);
 }
-
+.remark-text{
+  font-size: 80%;
+  color: #aaa;
+  margin-top:20rpx; 
+}
 .box-shadow{
   box-shadow: 4rpx 4rpx 20rpx #ddd;
 }
@@ -75,12 +101,12 @@ picker{
 /*图标*/
 @font-face {
   font-family: 'iconfont';  /* project id 1083985 */
-  src: url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.eot');
-  src: url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1083985_83qdmmgi3y6.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1083985_rh5kfxx6oma.eot');
+  src: url('//at.alicdn.com/t/font_1083985_rh5kfxx6oma.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1083985_rh5kfxx6oma.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1083985_rh5kfxx6oma.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1083985_rh5kfxx6oma.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1083985_rh5kfxx6oma.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -119,7 +145,7 @@ picker{
   content: "\e675";
 }
 
-.icon-linedesign-02:before {
+.icon-zan:before {
   content: "\e674";
 }
 
@@ -159,9 +185,23 @@ picker{
   content: "\e65f";
 }
 
-icon-identify::before{
+.icon-identify::before{
   content: "\e635";
 }
 
+.icon-send::before{
+  content: "\e652";
+}
 
+.icon-share::before{
+  content: "\e677";
+}
+
+.icon-draft::before{
+  content: "\e634";
+}
+
+.icon-identify-mark::before{
+  content: "\e635";
+}
 
