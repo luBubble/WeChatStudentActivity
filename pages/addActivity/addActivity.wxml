@@ -1,16 +1,14 @@
 <!--pages/addActivity/addActivity.wxml-->
 <view class='container'>
   <view class='basic-msg'>
-    <view class='input-text'>活动名称（必填）</view>
-    <input class="input" type='text' placeholder='活动名称将展示在分享链接、首页活动卡片中'/>
-    <view class='input-text'>活动类型</view>
-    <input class="input" type='text'/>
+    <view class='input-text'>活动名称</view>
+    <input class="input" type='text' placeholder='例：中南财经政法大学秋季运动会' value='{{title}}' bindinput='titleInput'/>
     <view class='input-text'>活动地点</view>
-    <input class="input" type='text'/>
+    <input class="input" type='text' placeholder='例：中南财经政法大学南湖校区新体' value='{{address}}' bindinput='addressInput'/>
     <view class='input-text'>活动主办方</view>
-    <input class="input" type='text'/>
+    <input class="input" type='text' placeholder='例：中南财经政法大学' value='{{organizer}}' bindinput='organizerInput'/>
     <view class='input-text'>活动承办方</view>
-    <input class="input" type='text'/>
+    <input class="input" type='text' placeholder='例：中南财经政法大学学生会体育部' value='{{contractor}}' bindinput='contractorInput'/>
     <view class='input-text'>活动起止</view>
     <view class='time-began-end'>
       <picker mode="date" start="2019-01-01" end="2019-12-31" value="{{beganDate}}" bindchange='bindBeganDateChange'>{{beganDate}}</picker>
@@ -20,6 +18,35 @@
     
   </view>
 
+  
+  <view class='time-line'>
+    <view class='input-text'>活动时间线</view>
+    <view class='time-line-group' wx:for="{{timeLineDatas}}" wx:key="{{index}}">
+      <picker class='' mode="date" start="2019-01-01" end="2019-12-31" value='{{item.date}}' data-index='{{index}}' bindchange='handleTimeLinePicker'>{{item.date}}</picker>
+      <input class="input time-line-input" type='text' value='{{item.content}}' data-index='{{index}}' bindinput='handleTimeLineInput' placeholder='请输入时间节点内容'/>
+      <view class='{{index===timeLineDatas.length-1?"add-time-point":"reduce-time-point"}}' data-index='{{index}}' data-isAdd="{{index===timeLineDatas.length-1}}" bindtap='handleTimeLineAction'>
+        <icon class='iconfont {{index===timeLineDatas.length-1?"icon-add":"icon-reduce"}}'></icon>
+      </view>
+    </view>
+  </view>
+
+  <view class='slide-pic'>
+    <view class='input-text'>轮播图</view>
+    <view class='slide-pic-content'>
+      <view class='upload-pic' wx:if="{{ slidePics.length != 0 }}" wx:for="{{slidePics}}" wx:key="{{index}}">
+        <image class='slide-image' src='{{item}}'></image>
+        <view class='icon-delete-wrap' data-index='{{index}}' bindtap='deleteSlidePic'>
+          <icon class='iconfont icon-delete'></icon>
+        </view>
+      </view>
+      <view class='upload-wrap' bindtap='uploadSlidePic' wx:if="{{ slidePics.length < 3}}">
+        <icon class='iconfont icon-add'></icon>
+      </view>
+    </view>
+    <view class='remark-text'>建议上传1030*535像素的图片，2.0M以内，支持jpg、jpeg、png格式，且最多上传3张。</view>
+  </view>
+
+  
   <view class='detail-wrap'>
     <view class='detail-head'>
       <view class='input-text'>活动详情</view>
@@ -35,51 +62,31 @@
       <view wx:for="{{detailTextDatas}}" wx:key="{{index}}">
         <input class='input' data-index="{{index}}" placeholder='请输入详情模块标题' value='{{item.title}}' bindinput='inputDetailTitle'/>
         <textarea data-index="{{index}}" placeholder='请输入详情模块内容' value='{{item.content}}' bindinput='inputDetailContent'></textarea>
+          <view class='btn btn-red' wx:if="{{detailTextDatas.length != 1}}" data-index="{{index}}" bindtap='deleteDetailModule'>删除该详情模块</view>
         <view class='btn btn-blue' wx:if="{{index===detailTextDatas.length-1}}" bindtap='addDetailModule'>添加新详情模块</view>
-        <view class='delete-wrap'  wx:if="{{index!==detailTextDatas.length-1}}">
-          <view class='btn btn-red' data-index="{{index}}" bindtap='deleteDetailModule'>删除该详情模块</view>
+      </view>
+    </view>
+
+    <view wx:if="{{!detailText}}">
+      <view class='detail-image-wrap'  wx:if='{{detailPic !== ""}}'>
+        <image class='detail-pic' mode='aspectFill' src="{{detailPic}}"></image>
+        <view class='icon-delete-wrap' data-index='{{index}}' bindtap='deleteDetailPic'>
+          <icon class='iconfont icon-delete'></icon>
         </view>
-        
       </view>
-      
-    </view>
-
-    <view class='upload-wrap' wx:if="{{!detailText}}">
-      <icon class='iconfont icon-add'></icon>
-    </view>
-  </view>
-  
-  <view class='time-line'>
-    <view class='input-text'>活动时间线</view>
-    <view class='time-line-group' wx:for="{{timeLineDatas}}" wx:key="{{index}}">
-      <picker class='' mode="date" start="2019-01-01" end="2019-12-31" value='{{item.date}}' data-index='{{index}}' bindchange='handleTimeLinePicker'>{{item.date}}</picker>
-      <input class="input time-line-input" type='text' value='{{item.content}}' data-index='{{index}}' bindinput='handleTimeLineInput'/>
-      <view class='{{index===timeLineDatas.length-1?"add-time-point":"reduce-time-point"}}' data-index='{{index}}' data-isAdd="{{index===timeLineDatas.length-1}}" bindtap='handleTimeLineAction'>
-        <icon class='iconfont {{index===timeLineDatas.length-1?"icon-add":"icon-reduce"}}'></icon>
+      <view class='upload-wrap' wx:if='{{detailPic === ""}}' bindtap='uploadDetailPic'>
+        <icon class='iconfont icon-add'></icon>
       </view>
+      <view class='remark-text'>请上传5.0M以内的图片，支持jpg、jpeg、png格式。</view>
     </view>
-  </view>
-
-  <view class='slide-pic'>
-    <view class='input-text'>轮播图</view>
-    <view class='upload-wrap'>
-      <icon class='iconfont icon-add'></icon>
-    </view>
-    <view class='remark-text'>建议上传1030*535像素的图片，5.0M以内，支持jpg、jpeg、png格式，且最多上传3张。</view>
-  </view>
-
-  <view class='share-pic'>
-    <view class='input-text'>分享链接图片</view>
-    <view class='upload-wrap'>
-      <icon class='iconfont icon-add'></icon>
-    </view>
-    <view class='remark-text'>建议上传500*400像素的图片，5.0M以内，支持jpg、jpeg、png格式。</view>
+    
   </view>
 
   <view class='button-two-bottom'>
-    <view class='btb-item-white'>存为草稿</view>
-    <view class='btb-item'>发布活动</view>
+    <view class='btb-item-white' data-draft='1' bindtap='saveActivity'>存为草稿</view>
+    <view class='btb-item' data-draft='0'  bindtap='saveActivity'>发布活动</view>
   </view>
+
 </view>
 
 

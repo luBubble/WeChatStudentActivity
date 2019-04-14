@@ -3,9 +3,9 @@
 <view class="user-msg-wrap">
  <view class='user-msg'>
   <view class='user-pic-wrap'>
-    <image class='user-pic' src='../../images/user1.jpg'></image>
+    <image class='user-pic' src='{{avatarUrl}}'></image>
   </view>
-  <view class='user-name'>boom</view>
+  <view class='user-name'>{{nickName}}</view>
  </view>
  <view class='user-type'>
   <icon class='iconfont icon-identify-mark'></icon>
