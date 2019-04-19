@@ -1,93 +1,41 @@
 // pages/activityDetail/activityDetail.js
+const app = getApp()
+const { post, get } = require('../../utils/util')
+let ac_id=0
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    imgAddress: app.globalData.imgAddress,
+    autoplay: true,
+    circular: true,
+    interval: 3000,
+    duration: 1000,
     tabItems:[
+      '基本信息', 
       '详情', 
       '时间线', 
       '评论' 
     ],
-    currentTab:2,
-    comments:[
-      {
-        userName:"噜噜噜",
-        time:"03-16 19:00",
-        anotherUser:"海洋",
-        text:"哈哈哈哈哈"
-      },
-      {
-        userName: "来吃葱",
-        time: "03-16 19:00",
-        anotherUser: "",
-        text: "哈哈哈哈哈"
-      },
-      {
-        userName:"噜噜噜",
-        time:"03-16 19:00",
-        anotherUser:"海洋",
-        text:"哈哈哈哈哈"
-      },
-      {
-        userName: "来吃葱",
-        time: "03-16 19:00",
-        anotherUser: "",
-        text: "哈哈哈哈哈"
-      },
-      {
-        userName:"噜噜噜",
-        time:"03-16 19:00",
-        anotherUser:"海洋",
-        text:"哈哈哈哈哈"
-      },
-      {
-        userName: "来吃葱",
-        time: "03-16 19:00",
-        anotherUser: "",
-        text: "哈哈哈哈哈"
-      },
-      {
-        userName: "噜噜噜",
-        time: "03-16 19:00",
-        anotherUser: "海洋",
-        text: "哈哈哈哈哈"
-      },
-      {
-        userName: "来吃葱",
-        time: "03-16 19:00",
-        anotherUser: "",
-        text: "哈哈哈哈哈"
-      }
-    ],
-    timeLines:[
-      {
-        date:"2019-03-20",
-        content:"海选阶段"
-      },
-      {
-        date: "2019-03-21",
-        content: "初赛"
-      }
-    ],
-    activityDetails:[
-    {
-      title:"活动简介",
-      content:"都可以随便的，你说的，我都愿意去，小火车，摆动的旋律，都可以是真的，你说的，我都会相信，因为我完全信任你。"
-    },
-    {
-      title: "活动流程",
-      content: "都可以随便的，你说的，我都愿意去，小火车，摆动的旋律，都可以是真的，你说的，我都会相信，因为我完全信任你。"
-    }
-    ]
+    currentTab:0,
+    basic: null,
+    comments:[],
+    timeLines:[],
+    activityDetails:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    ac_id=options.ac_id || 39
+    get(app.globalData.serverAddress + '/getActivity/basic',
+      {
+        ac_id: ac_id
+      }).then( res =>{
+        this.setData({ basic: res.data.basic})
+      })
   },
 
   /**
@@ -140,9 +88,37 @@ Page({
   },
 
   handleTabClick: function (e) {
+    let tabindex = e.currentTarget.dataset.tabindex
     this.setData({
-      currentTab: e.currentTarget.dataset.tabindex
+      currentTab: tabindex
     })
+    //详情
+    if (tabindex===1) {
+      get(app.globalData.serverAddress + '/getActivity/detail',
+        {
+          ac_id: ac_id
+        }).then(res => {
+          this.setData({ activityDetails: res.data.detail })
+        })
+    }
+    //时间线
+    if(tabindex===2){
+      get(app.globalData.serverAddress + '/getActivity/timeLine',
+        {
+          ac_id: ac_id
+        }).then(res => {
+          this.setData({ timeLines: res.data.timeLine })
+        })
+    }
+    //评论
+    if(tabindex===3){
+      get(app.globalData.serverAddress + '/getActivity/comment',
+        {
+          ac_id: ac_id
+        }).then(res => {
+          this.setData({ comments: res.data.comment })
+        })
+    }
   }
 
 })

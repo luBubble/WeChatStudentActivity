@@ -317,7 +317,6 @@ Page({
 
         Promise.all(slidePromise).then(
           function(res){
-            console.log(res)
             //完善活动详情信息
             if (detailType === 0) {
               wx.hideLoading()
@@ -346,10 +345,15 @@ Page({
                 }
               })
             }
-          }).then(function(res){
+          }).then(res => {
               wx.hideLoading()
               wx.showToast({
-                title: "活动保存成功！"
+                title: "活动保存成功！",
+                success:() => { 
+                  wx.redirectTo({
+                    url: '../activityDetail/activityDetail?ac_id=' + ac_id
+                  })
+                }
               })
         }).catch(function (err) {
             wx.hideLoading()

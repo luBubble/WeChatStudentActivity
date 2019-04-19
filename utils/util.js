@@ -90,11 +90,10 @@ const upload=option => {
     wx.uploadFile({
       url: option.url,
       filePath: option.filePath,
-      name: option.name,//这里根据自己的实际情况改
-      formData: option.formData,//这里是上传图片时一起上传的数据
+      name: option.name,
+      formData: option.formData,
       success: (resp) => {
         let data = JSON.parse(resp.data)
-        console.log(11, data.result)
         if (resp.statusCode == 200 && data.result == 'success') {
           resolve(resp)
         } else {//返回错误提示信息

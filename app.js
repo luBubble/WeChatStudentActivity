@@ -103,6 +103,7 @@ App({
     openid:null,
     userInfo: null,
     userMsg:null,
-    serverAddress:"http://localhost:3000",
+    serverAddress:"http://lububble.oicp.io:43166",
+    imgAddress: "http://lububble.oicp.io:43166/images/",
   }
 })

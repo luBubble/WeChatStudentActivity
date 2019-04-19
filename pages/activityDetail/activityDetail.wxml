@@ -12,14 +12,55 @@
       <icon class='iconfont icon-share'></icon>
     </view>
   </view>
- <image class='bg-pic' src='../../images/slide1.jpg'/>
+  <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+     <block wx:if="{{basic.slide_pic1}}">
+      <swiper-item>
+        <image src="{{imgAddress+basic.slide_pic1}}" class='slide-image'/>
+      </swiper-item>
+    </block>
+    <block wx:if="{{basic.slide_pic2}}">
+      <swiper-item>
+        <image src="{{imgAddress+basic.slide_pic2}}" class='slide-image'/>
+      </swiper-item>
+    </block>
+    <block wx:if="{{basic.slide_pic3}}">
+      <swiper-item>
+        <image src="{{imgAddress+basic.slide_pic3}}" class='slide-image'/>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>
 <view class='tab-wrap'>
   <view class='tab-header' >
     <view wx:for="{{tabItems}}" wx:key="{{index}}" data-tabindex='{{index}}' bindtap='handleTabClick' class="tab-item {{currentTab === index ? 'active' : '' }}">{{item}}</view> 
   </view>
   <view class='tab-body'>
-    <view hidden='{{currentTab !== 0}}'>
+
+   <view hidden='{{currentTab !== 0}}'>
+    <view class='basic-wrap'>
+      <view class='basic-text'>活动名称</view>
+      <view class='basic-content'>{{basic.title}}</view>
+    </view>
+    <view class='basic-wrap'>
+      <view class='basic-text'>活动起止时间</view>
+      <view class='basic-content'>{{basic.begin_str}}至{{basic.end_str}}</view>
+    </view>
+    <view class='basic-wrap'>   
+      <view class='basic-text'>活动地点</view>
+      <view class='basic-content'>{{basic.address}}</view>
+    </view>
+    <view class='basic-wrap'>  
+      <view class='basic-text'>活动主办方</view>
+      <view class='basic-content'>{{basic.organizer}}</view>
+    </view>
+    <view class='basic-wrap'>  
+      <view class='basic-text'>活动承办方</view>
+      <view class='basic-content'>{{basic.contractor}}</view>
+    </view>
+      <view class='button-bottom'>报名</view>
+    </view>
+
+    <view hidden='{{currentTab !== 1}}'>
       <view class='module-wrap' wx:for="{{activityDetails}}" wx:key="{{index}}">
           <view class='module-title'>{{ item.title}}</view>
           <view class='module-content'>{{item.content}}</view>
@@ -27,26 +68,28 @@
       <view class='button-bottom'>报名</view>
     </view>
     
-    <view class='time-line-wrap' hidden='{{currentTab !== 1}}'>
+    <view class='time-line-wrap' hidden='{{currentTab !== 2}}'>
       <view class='time-item-wrap' wx:for="{{timeLines}}" wx:key="{{index}}">
         <view class='item-point'></view>
-        <view class='item-date'>{{item.date}}</view>
+        <view class='item-date'>{{item.date_str}}</view>
         <view class='item-content'>{{item.content}}</view>
       </view>
     </view>
 
-    <view hidden='{{currentTab !== 2}}'>
+    <view hidden='{{currentTab !== 3}}'>
       <view class='comment-item-wrap' wx:for='{{comments}}' wx:key="{{index}}" style='{{index===comments.length-1 ? "border-bottom:none;" : "" }}'>
-        <view class='user-img'></view>
+        <view class='user-img-wrap'>
+          <image class='user-img' mode='aspectFit' src="{{imgAddress+item.avatar1}}"></image>
+        </view>
         <view class='comment-content'>
           <view class='user-msg'>
-            <view class='user-name'>{{item.userName}}</view>
-            <view class='comment-time-text'>{{item.time}}</view>
+            <view class='user-name'>{{item.name1}}</view>
+            <view class='comment-time-text'>{{item.time_str}}</view>
           </view>
           <view class='content-text'>
-            <text hidden='{{item.anotherUser == ""}}'>回复<text class='another-user-name'>{{item.anotherUser}}</text>
+            <text hidden='{{item.anotherUser == ""}}'>回复<text class='another-user-name'>{{item.name2}}</text>
             </text>
-            <text class='comment-text'>{{item.text}}</text>
+            <text class='comment-text'>{{item.content}}</text>
           </view>
         </view>
       </view>

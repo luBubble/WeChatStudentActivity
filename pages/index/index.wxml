@@ -5,9 +5,9 @@
     duration="{{duration}}"
     circular="{{circular}}"
   >
-    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <block wx:for="{{slides}}" wx:key="{{index}}" data-acid="{{item.acid}}" bindtap='gotoActivityDetail'>
       <swiper-item>
-        <image src="../../images/{{item}}" class='slide-image'/>
+        <image src="{{imgAddress+item.img}}" class='slide-image'/>
       </swiper-item>
     </block>
   </swiper>
@@ -23,10 +23,10 @@
     <view class='activity-more' bindtap='gotoMoreActivity'>更多</view>
   </view>
   <view class='activity-list'>
-    <view class="activity-wrap activity-box" wx:for="{{newActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail'>
-      <image class='activity-pic' src='../../images/{{item.img}}' />
+    <view class="activity-wrap activity-box" wx:for="{{newActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail' data-acid='{{item.id}}'>
+      <image class='activity-pic' src='{{imgAddress+item.img}}' />
       <view class='title'>{{item.title}}</view>
-      <view class='belong'>{{item.organization}}</view>
+      <view class='belong'>{{item.organizer}}</view>
     </view>
   </view>
 
@@ -35,13 +35,13 @@
     <view class='activity-more' bindtap='gotoMoreActivity'>更多</view>
   </view>
     <view class='top-container'>
-      <view class='top-wrap activity-box' wx:for="{{hotActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail'>
+      <view class='top-wrap activity-box' wx:for="{{hotActivities}}" wx:key="{{index}}" bindtap='gotoActivityDetail' data-acid='{{item.id}}'>
         <view class='top-num'>{{index+1}}</view>
-        <image class='top-pic' src='../../images/{{item.img}}'/>
+        <image class='top-pic' src='{{imgAddress+item.img}}'/>
         <view class='top-content-wrap'>
           <view class='title'>{{item.title}}</view>
-          <view class='belong'>{{item.organization}}</view>
-          <view class='see-num'>浏览量{{item.viewNum}}人次</view>
+          <view class='belong'>{{item.organizer}}</view>
+          <view class='see-num'>点赞量{{item.zan?item.zan:0}}个</view>
         </view>
       </view>
     </view>

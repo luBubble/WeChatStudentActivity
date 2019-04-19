@@ -1,13 +1,19 @@
 <!--pages/activityList/activityList.wxml-->
 <view class='container'>
+  <view class="btn-select">全选</view>
   <view class='list-wrap'>
-    <view class='activity-box'>
-        <image class='pic' src='../../images/slide1.jpg'/>
+    <view class='activity-box' wx:for="{{activities}}" wx:key="{{index}}">
+        <image class='pic' src='{{imgAddress+item.img}}' />
         <view class='content-wrap'>
-          <view class='title'>超级受欢迎的活动</view>
-          <view class='belong'>信息与安全工程学院学生会</view>
-          <view class='see-num'>浏览量2333人次</view>
+          <view class='title'>{{item.title}}</view>
+          <view class='belong'>{{item.organization}}</view>
+          <view class='see-num'>浏览量{{item.viewNum}}人次</view>
         </view>
-      </view>
+        <checkbox class='ac-checkbox' value="{{index}}" checked="{{item.checked}}" />
+    </view>
+  </view>
+  <view class='button-two-bottom'>
+    <view class='btb-item' bindtap='delete' >删除</view>
+    <view class='btb-item-white' >取消</view>
   </view>
 </view>
